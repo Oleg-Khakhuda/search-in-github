@@ -51,7 +51,7 @@ const gitHandlerSubmit = (e) => {
     e.preventDefault()
     const value = refs.input.value;
 
-    axios.get(`https://api.github.com/search/users?q=${value}&client_id=92f090ebd3e94e524b74&client_secret=7009ecd438e8e00c052cd01477274807fcd3d2ac$page=${currentPage}`)
+    axios.get(`https://api.github.com/search/users?q=${value}&client_id=92f090ebd3e94e524b74&client_secret=7009ecd438e8e00c052cd01477274807fcd3d2ac&page=${currentPage}`)
         .then(result => renderGitCollection(result.data.items))
         .then(() => currentPage++)
         .catch(err => console.log(err))
@@ -61,7 +61,7 @@ const gitHandlerSubmitRepositories = (e) => {
      e.preventDefault()
     const value = refs.input.value;
 
-    axios.get(`https://api.github.com/search/repositories?q=${value}&client_id=92f090ebd3e94e524b74&client_secret=7009ecd438e8e00c052cd01477274807fcd3d2ac$page=${currentPage}`)
+    axios.get(`https://api.github.com/search/repositories?q=${value}&client_id=92f090ebd3e94e524b74&client_secret=7009ecd438e8e00c052cd01477274807fcd3d2ac&page=${currentPage}`)
         .then(result => renderGitCollection(result.data.items))
         .then(() => currentPage++)
         .catch(err => console.log(err))
